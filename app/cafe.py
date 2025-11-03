@@ -6,10 +6,20 @@ from app.errors import (NotVaccinatedError,
 
 
 class Cafe:
+    """Represents a cafe with COVID-related entry rules."""
+
     def __init__(self, name: str) -> None:
+        """Initialize the cafe with its name."""
         self.name = name
 
     def visit_cafe(self, visitor: dict) -> str:
+        """
+        Check if a visitor can enter the cafe.
+
+        Validates vaccine availability, vaccine expiration date,
+        and mask-wearing requirement. Raises appropriate exceptions
+        if access rules are violated.
+        """
         vaccine = visitor.get("vaccine", None)
         visitor_name = visitor["name"]
 

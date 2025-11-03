@@ -24,8 +24,7 @@ def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
             vaccine_problem_found = True
             break
 
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+        except Exception:
             break
 
     if vaccine_problem_found:
